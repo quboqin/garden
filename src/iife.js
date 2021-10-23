@@ -1,4 +1,6 @@
-var Module = function() {
+var module
+
+(function() {
   // private scope begin
   let firstName = 'Qubo'
   let lastName = 'Qin'
@@ -25,28 +27,10 @@ var Module = function() {
   // private scope end
 
   // export apis
-  return {
+  window.module = {
     sayHello: sayHello,
     setFirstName: setFirstName,
     setLastName: setLastName,
     info: info
-  };
-};
-
-var module1 = new Module();
-module1.setFirstName('Q')
-module1.info.sex = 'female'
-module1.sayHello();
-
-var module2 = new Module();
-module2.setLastName('Q')
-module2.sayHello();
-
-var moduleA = Module()
-moduleA.setFirstName('A')
-moduleA.info.sex = 'female'
-moduleA.sayHello()
-
-var moduleB = Module()
-moduleB.setLastName('B')
-moduleB.sayHello()
+  }
+})(window);
